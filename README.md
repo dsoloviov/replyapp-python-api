@@ -16,8 +16,8 @@ Replyapp.io public API wrapper.
 ```python
 >>> from reply import Reply
 >>> reply = Reply('your-api-key')
->>> reply.people().list()  # list all people in account
->>> reply.campaigns().list(name='campaign-name')  # find campaigns
+>>> reply.people.list.all()  # list all people in account
+>>> reply.campaigns.list.name('campaign-name')  # find campaigns by name
 ```
 
 
@@ -26,20 +26,20 @@ Replyapp.io public API wrapper.
 [Support page](http://support.replyapp.io/article/50-people)
 
 ```python
->>> reply.people().list()  # GET | all people
->>> reply.people().list(_id=11111)  # GET | find people by ID
->>> reply.people().list(email='email@example.com')  # GET | find people by email
+>>> # GET methods
+>>> reply.people.list.all()  # list all people
+>>> reply.people.list.id(11111)  # find people by ID
+>>> reply.people.list.email('email@example.com')  # find people by email
 ```
-
-If both ID and email provided - ID will be used.
 
 ### Campaigns endpoint
 
 [Support page](http://support.replyapp.io/article/56-campaigns)
 
 ```python
->>> reply.campaigns().list()  # GET | all campaigns
->>> reply.campaigns().list(name='campaign-name')  # GET | find campaigns by name
+>>> # GET methods
+>>> reply.campaigns.list.all()  # list all campaigns
+>>> reply.campaigns.list.name('campaign-name')  # find campaigns by name
 ```
 
 ### Actions endpoint
@@ -56,4 +56,7 @@ If both ID and email provided - ID will be used.
 
 ## Tests
 
-To be done
+```shell
+$ python -m unittest discover -v
+```
+
