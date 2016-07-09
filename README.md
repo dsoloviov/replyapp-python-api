@@ -30,6 +30,11 @@ Replyapp.io public API wrapper.
 >>> reply.people.list.all()  # list all people
 >>> reply.people.list.id(11111)  # find people by ID
 >>> reply.people.list.email('email@example.com')  # find people by email
+>>> # POST methods
+>>> reply.people.save.one({'id': 11111, 'email': 'email@example.com', 'firstName': 'Test'})  # create new people or update existing
+>>> # DELETE methods
+>>> reply.people.delete.id(11111)  # delete people by ID
+>>> reply.people.delete.email('email@example.com')  # delete people by email
 ```
 
 ### Campaigns endpoint
@@ -59,4 +64,3 @@ Replyapp.io public API wrapper.
 ```shell
 $ python -m unittest discover -v
 ```
-
